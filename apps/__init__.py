@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from apps.database import db_session
 
 app = Flask(__name__)
 
