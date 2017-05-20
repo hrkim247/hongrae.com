@@ -32,6 +32,11 @@ def index():
 def login():
     return loginConfirm("login.html")
 
+
+@app.route("/todo")
+def todo():
+    return loginConfirm("todo.html")
+
 @app.route("/trylogin")
 def trylogin():
     id = request.args.get('id')
