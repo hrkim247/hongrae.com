@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Date
 from apps.database import Base
 
 class User(Base):
@@ -20,7 +20,7 @@ class Todo(Base):
 
     __tablename__ = "todo"
 
-    num = Column(Interger, primary_key = True)
+    num = Column(Integer, primary_key = True)
     todo = Column(String, unique=True)
     date = Column(Date, unique=True)
 
