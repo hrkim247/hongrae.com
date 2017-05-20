@@ -1,9 +1,48 @@
 <html>
+<style>
+#menu ul {
+	background-color: green;
+	padding: 1px 5px 5px 1px;
+	list-style-type:none;
+}
+#menu ul li {
+	display:in line;
+	border-left:1px solid #c0c0c0;
+	padding: 0px 10px 0px 10px;
+	margin: 5px 0px 5px 0px;
+	color:#ffffff;
+	font-size:17pt;
+}
+
+#menu a {
+	text-decoration:none;
+	color:#ffffff;
+}
+
+#menu ul li:first-child {
+	border-left:none;
+	font-style:bold;
+}
+
+#menu button {
+	float:right;
+	padding: 0px 10px 0px 10px;
+	margin: 5px 0px 5px 0px;
+}	
+
+</style>
 <title> 넓은 산딸기 </title>
-<h1> 넓은 산딸기 </h1>
+<div id="menu">
+<ul style="list-style-type:none">
+<li style="display:inline"><a href="/"> 넓은 산딸기 </a></li>
+<li style="display:inline"><a href="/blog"> BLOG </a></li>
+<li style="display:inline"><a href="/todo"> TODO </a></li>
+<li style="display:inline"><a href="/pmeb"> PMEB </a></li>
 {% if login == False %}
 <button onclick="location.href = '/login'"> 로그인 </button>
 <button onclick="location.href = '/join'"> 회원가입 </button>
+</ul>
+</div>
 {% else %}
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script type=text/javascript>
@@ -21,5 +60,7 @@ function logout() {
 }
 </script>
 <button onclick="logout()"> 로그아웃 </button>
+</ul>
+</div>
 {% endif %}
 </html>
