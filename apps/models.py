@@ -3,7 +3,7 @@ from apps.database import Base
 
 class User(Base):
 
-    __tablename__ = "users"
+    __tablename__ = "user"
     
     num = Column(Integer, primary_key=True)
     id = Column(String, unique=True)
