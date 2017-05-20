@@ -1,4 +1,9 @@
+{% extends "menu.html" %}
 <html>
+{% block menu %} 
+{{ super() }}
+</ul>
+</div> 
 {% if login == False %}
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script type=text/javascript>
@@ -21,14 +26,14 @@ function login() {
 }
 </script>
 <style>
-body {
+#wrapper_box {
 	text-align:center;
 }
 #box {
 	border: 1px solid black
 }
 </style>
-<body>
+<div id="wrapper_box">
 <div id="box">
 <title> 로그인 </title>
 <h1> 로그인 </h1>
@@ -38,10 +43,11 @@ body {
 <input type="password" id="pw">
 <p> <button onclick="login()"> 로그인 </button> </p>
 </div>
-</body>
+</div>
 {% else %}
 <script type=text/javascript>
 location.href = "/"
 </script>
 {% endif %}
+{% endblock %}
 </html>
