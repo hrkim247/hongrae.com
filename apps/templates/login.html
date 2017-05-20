@@ -1,7 +1,18 @@
 <html>
-<script src="http://code.jquery.com/jquery.min.js">
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script type=text/javascript>
+$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
 <script type=text/javascript>
 function login() {
+	$(function() {
+		$.getJSON($SCRIPT_ROOT+'/trylogin', {
+			id:$('#id').val(),
+			pw:$('#pw').val()
+		}, function(data) {
+			alert(data.result)
+		})
+	})
 }
 </script>
 <title> 로그인 </title>
