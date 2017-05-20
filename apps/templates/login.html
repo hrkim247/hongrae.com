@@ -20,6 +20,16 @@ function login() {
 	})
 }
 </script>
+<style>
+body {
+	text-align:center;
+}
+#box {
+	border: 1px solid black
+}
+</style>
+<body>
+<div id="box">
 <title> 로그인 </title>
 <h1> 로그인 </h1>
 <p> 아이디 </p>
@@ -27,6 +37,8 @@ function login() {
 <p> 비밀번호 </p>
 <input type="password" id="pw">
 <p> <button onclick="login()"> 로그인 </button> </p>
+</div>
+</body>
 {% else %}
 <script type=text/javascript>
 location.href = "/"
