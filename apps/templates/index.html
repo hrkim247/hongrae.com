@@ -2,30 +2,5 @@
 <html>
 {% block menu %}
 {{ super() }}
-{% if login == False %}
-<button onclick="location.href = '/login'"> 로그인 </button>
-<button onclick="location.href = '/join'"> 회원가입 </button>
-</ul>
-</div>
-{% else %}
-<script src="http://code.jquery.com/jquery.min.js"></script>
-<script type=text/javascript>
-$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-</script>
-<script type=text/javascript>
-function logout() {
-	$(function() {
-		$.getJSON($SCRIPT_ROOT+'/trylogout', {
-			logout:"true"
-		}, function(data) {
-			location.href = "/"
-		})
-	})
-}
-</script>
-<button onclick="logout()"> 로그아웃 </button>
-</ul>
-</div>
-{% endif %}
 {% endblock %}
 </html>
