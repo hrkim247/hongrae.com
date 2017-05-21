@@ -1,0 +1,44 @@
+{% extends "menu.html" %}
+<html>
+{% block menu %}
+{{ super() }}
+<style>
+#wrapper_box {
+	text-align: center;
+}
+</style>
+{% if login == True %}
+<script type=text/javascript>
+function add() {
+	$(function() {
+		$.getJSON($SCRIPT_ROOT+'/add_todo', {
+			todo:$('#todo').val(),
+			date:$('#date').val()
+		}, function (data) {
+			if (data.result == "true") {
+				alert("추가하였습니다.")
+			} else {
+				alert("실패하였습니다. 다시 시도해 주시기 바랍니다.")
+			}
+		})
+	})
+}
+</script>
+<div id="wrapper_box">
+<div id="box">
+<h1> TODO </h1>
+<p>
+<input type="text" size=40 id="todo">
+<input type="date" id="date">
+<button onclick="add()"> 추가하기 </button>
+</p>
+</div>
+</div>
+{% else %}
+<script type=text/javascript>
+alert("로그인을 해주시기 바랍니다.")
+location.href = "/login"
+</script>
+{% endif %}
+{% endblock %}
+</html>
